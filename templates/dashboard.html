@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InboxSweep Dashboard</title>
+    <link rel="stylesheet" href="../static/dashboard.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <h1>InboxSweep</h1>
+    <p>Welcome, User</p>
+</header>
+
+<!-- Main Container -->
+<div class="container">
+
+    <!-- Summary Cards -->
+<section class="cards">
+    <div class="card">
+        <h3>Total Emails Deleted</h3>
+        <p class="number">{{ total_deleted }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Last Cleanup</h3>
+        <p class="number">{{ last_cleanup }}</p>
+    </div>
+
+    <div class="card status healthy">
+        <h3>Status</h3>
+        <p class="number">{{ status }}</p>
+    </div>
+</section>
+
+    <!-- Folder Breakdown -->
+    <section class="folder-section">
+        <h2>Folder Breakdown</h2>
+
+        <div class="folder">
+            <span>Spam</span>
+            <div class="bar spam"></div>
+        </div>
+
+        <div class="folder">
+            <span>Promotions</span>
+            <div class="bar promotions"></div>
+        </div>
+
+        <div class="folder">
+            <span>Social</span>
+            <div class="bar social"></div>
+        </div>
+    </section>
+
+    <!-- Actions (Top Controls) -->
+<section class="actions top-actions">
+
+    <select id="label">
+        <option value="spam">Spam</option>
+        <option value="promotions">Promotions</option>
+        <option value="social">Social</option>
+    </select>
+
+    <select id="days">
+        <option value="15">Last 15 days</option>
+        <option value="30">Last 30 days</option>
+    </select>
+
+    <button class="primary" onclick="runCleanup()">
+        Run Cleanup
+    </button>
+
+</section>
+
+    <!-- Loader -->
+<div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <p>Cleaning your inbox...</p>
+    <small>Please wait, this may take a few seconds</small>
+</div>
+
+    <!-- Activity Table -->
+    <section class="table-section">
+<h2>Recent Cleanup Activity</h2>
+<table>
+<thead>
+<tr>
+    <th>Date</th>
+    <th>Days</th>
+    <th>Deleted</th>
+    <th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+{% for row in history %}
+<tr>
+    <td>{{ row.date }}</td>
+    <td>{{ row.days }}</td>
+    <td>{{ row.deleted }}</td>
+    <td class="{{ 'success' if row.deleted > 0 else 'warning' }}">
+        {{ row.status }}
+    </td>
+</tr>
+{% endfor %}
+</tbody>
+
+</table>
+</section>
+
+<script>
+function runCleanup() {
+    const label = document.getElementById("label").value;
+    const days = document.getElementById("days").value;
+
+    document.getElementById("loader").classList.remove("hidden");
+
+    window.location.href = `/cleanup/${label}?days=${days}`;
+}
+</script>
+</div>
+</body>
+</html>

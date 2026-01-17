@@ -1,0 +1,315 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: #bfe7ff;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: center;   /* centers horizontally */
+    align-items: center;       /* centers vertically */
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    background: linear-gradient(135deg, #F875AA, #ff4d88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 4px 10px rgba(248,117,170,0.3);
+}
+.logo:hover {
+    text-shadow: 0 6px 20px rgba(248,117,170,0.5);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: calc(100vh - 120px);
+    background-color: #EDFFF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+/* SVG Wave */
+.wave-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 0;
+}
+
+/* Content */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding: 0 10px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #374151;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* CTA */
+.cta-box {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-box input {
+    padding: 14px 18px;
+    width: 280px;
+    max-width: 100%;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.cta-box button {
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #F875AA;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.cta-box button:hover {
+    background-color: #e45d96;
+    transform: translateY(-2px);
+}
+.login-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    background-color: #F875AA;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #e45d96;
+    transform: translateY(-2px);
+}
+
+/* Privacy */
+.privacy-note {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #EDFFF0;
+}
+
+.footer a {
+    font-size: 13px;
+    color: #374151;
+    text-decoration: underline;
+}
+
+/* ========================= */
+/* 📱 Mobile Responsiveness */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+    background: #bfe7ff;
+    padding: 30px 60px;
+    display: flex;
+    align-items: center;
+}
+    .logo {
+        font-size: 28px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .cta-box {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cta-box input,
+    .cta-box button {
+        width: 100%;
+    }
+
+    .wave-bg {
+        height: 55%;
+    }
+}
+
+/* ========================= */
+/* 📱 Small Phones */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .cta-box button {
+        font-size: 13px;
+        padding: 12px 20px;
+    }
+
+    .privacy-note {
+        font-size: 11px;
+    }
+
+    .wave-bg {
+        height: 60%;
+    }
+}
+.navbar {
+    background: #bfe7ff;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Buttons container */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Button base */
+.nav-btn {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #333;
+    background: white;
+    transition: 0.3s;
+}
+
+/* Hover */
+.nav-btn:hover {
+    background: #eee;
+}
+
+/* Primary (Login) */
+.nav-btn.primary {
+    background: #ff6f91;
+    color: white;
+}
+
+.nav-btn.primary:hover {
+    background: #ff4f7a;
+}
+
+/* ===================== */
+/* Animations */
+/* ===================== */
+
+/* Logo entrance */
+@keyframes logoFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    animation: logoFloat 0.8s ease-out;
+}
+
+/* Hero title */
+@keyframes heroFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h1 {
+    animation: heroFade 0.9s ease forwards;
+}
+
+/* Hero paragraph */
+.hero-content p {
+    animation: heroFade 1.1s ease forwards;
+}
+
+/* Button pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.nav-btn.primary {
+    animation: pulse 2s infinite;
+}
+
+/* Hover glow */
+.nav-btn.primary:hover {
+    box-shadow: 0 10px 30px rgba(248,117,170,0.5);
+}
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cleanup Result</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#EDFFF0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.result-card{
+    background:#FDEDED;
+    padding:40px;
+    border-radius:18px;
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.result-card h1{
+    color:#F875AA;
+    margin-bottom:10px;
+}
+
+.result-card p{
+    font-size:18px;
+    color:#333;
+    margin:20px 0;
+}
+
+.success{
+    color:green;
+    font-weight:bold;
+}
+
+.warning{
+    color:#ff9800;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#F875AA;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#e55d95;
+}
+
+    /* ===================== */
+/* Result Page Animations */
+/* ===================== */
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.result-card {
+    animation: zoomIn 0.6s ease;
+}
+
+/* Success text bounce */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.result-message {
+    animation: bounce 1.2s ease infinite;
+}
+
+</style>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+window.onload = function () {
+    confetti({
+        particleCount: 180,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
+};
+</script>
+
+<body>
+
+<div class="result-card">
+
+    <h1>{{ title }}</h1>
+
+    <p class="result-message">{{ message }}</p>
+
+    <a href="/dashboard" class="btn">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>
