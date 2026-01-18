@@ -1,8 +1,8 @@
-📩 InboxSweeb ✨
+📩 InboxSweep ✨
 
 A Flask-based Gmail Cleanup Tool
 
-InboxSweeb helps you automatically clean your Gmail inbox by deleting old emails from selected categories like Spam, Promotions, and Social.
+InboxSweep helps you automatically clean your Gmail inbox by deleting old emails from selected categories like Spam, Promotions, and Social.
 
 🚀 Features
 
@@ -19,13 +19,13 @@ InboxSweeb helps you automatically clean your Gmail inbox by deleting old emails
 🖥 Tech Stack
 
 -Backend: Python (Flask)
--Frontend: HTML, CSS, JS
+-Frontend: HTML, CSS
 -Storage: JSON
 -Version Control: Git & GitHub
 
 📂 Project Structure
 
-InboxSweeb/
+InboxSweep/
 │
 ├── app.py
 ├── requirements.txt
@@ -46,7 +46,7 @@ InboxSweeb/
 ⚙️ How to Run Locally
 
 1️⃣ Clone the repository
-git clone https://github.com/sanyarajput77/InboxSweeb.git
+git clone https://github.com/sanyarajput77/InboxSweep.git
 cd InboxSweeb
 
 2️⃣ Create virtual environment
