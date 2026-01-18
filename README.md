@@ -1,4 +1,4 @@
-📩 InboxSweep ✨
+📩 InboxSweeb ✨
 
 A Flask-based Gmail Cleanup Tool
 
